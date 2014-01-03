@@ -1,0 +1,13 @@
+<h3>{{id}}</h3>
+
+<p>{{#link-to 'clients.edit' this}}Edit{{/link-to}} <button {{action destroyRecord}}>Destroy</button></p>
+
+<ul>
+  <li>First Name: {{firstName}}</li>
+  <li>Last Name: {{lastName}}</li>
+  <li>Phone: {{phone}}</li>
+  <li>Email: {{email}}</li>
+</ul>
+
+{{render 'invoiceItems/index' invoiceItems}}
+{{outlet invoiceItems}}

@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      resources :clients
+      resources :invoice_items
+      # resources :tests, except: [:new, :edit]
+    end
+  end
+
+  get "/clients(/*children)", :constraints => { :children => /.+?/ }, to: 'landing#index', as: :clients
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

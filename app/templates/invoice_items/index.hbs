@@ -1,0 +1,21 @@
+<h3>Saldo {{total}}</h3>
+
+<p>{{#link-to 'invoice_items.new'}}New invoice_item{{/link-to}}</p>
+
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>Created At</th>
+    <th>Description</th>
+    <th>Amount</th>
+  </tr>
+  {{#each}}
+    <tr>
+      <td>{{#link-to 'invoice_items.show' this}}{{id}}{{/link-to}}</td>
+      <td>{{createdAt}}</td>
+      <td>{{description}}</td>
+      <td>{{amount}}</td>
+    </tr>
+  {{/each}}
+</table>

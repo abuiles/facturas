@@ -40,4 +40,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'ember-appkit-rails', git: "git@github.com:abuiles/ember-appkit-rails.git"
+gem 'ember-appkit-rails', git: 'https://github.com/dockyard/ember-appkit-rails.git'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+end

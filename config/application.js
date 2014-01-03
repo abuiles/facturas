@@ -8,4 +8,6 @@
 //= require_tree ../app
 //= require_tree ./initializers
 
-window.App = require('app').default.create();
+window.App = require('app').default.create({
+
+});

@@ -10,3 +10,5 @@
 */
 
 window.ENV = {};
+window.ENV.FEATURES["string-humanize"] = true;
+window.ENV.FEATURES["query-params"] = true;

@@ -1,0 +1,22 @@
+<h3>Index</h3>
+
+<p>{{#link-to 'clients.new'}}New client{{/link-to}}</p>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+  </tr>
+  {{#each}}
+    <tr>
+      <td>{{#link-to 'clients.show' this}}{{id}}{{/link-to}}</td>
+      <td>{{firstName}}</td>
+      <td>{{lastName}}</td>
+      <td>{{phone}}</td>
+      <td>{{email}}</td>
+    </tr>
+  {{/each}}
+</table>

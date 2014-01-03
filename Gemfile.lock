@@ -1,8 +1,8 @@
 GIT
-  remote: git@github.com:abuiles/ember-appkit-rails.git
-  revision: e07e1162d005b3c3d553b2241e0b85276ebac04b
+  remote: https://github.com/dockyard/ember-appkit-rails.git
+  revision: ba5dd0c780f4910e2f80fd681c5b501679716c06
   specs:
-    ember-appkit-rails (0.2.0)
+    ember-appkit-rails (0.3.0)
       active_model_serializers
       barber (>= 0.4.1)
       ember-data-source (~> 1.0.0.beta.3)
@@ -10,7 +10,7 @@ GIT
       es6_module_transpiler-rails (~> 0.3.0)
       handlebars-source
       jquery-rails
-      rails (~> 4)
+      rails (~> 4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -57,6 +57,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    diff-lcs (1.2.5)
     ember-data-source (1.0.0.beta.4)
       ember-source
     ember-source (1.2.0.1)
@@ -100,6 +101,23 @@ GEM
     rake (10.1.1)
     rdoc (3.12.2)
       json (~> 1.4)
+    rspec-collection_matchers (0.0.2)
+      rspec-expectations (>= 2.99.0.beta1)
+    rspec-core (3.0.0.beta1)
+    rspec-expectations (3.0.0.beta1)
+      diff-lcs (>= 1.1.3, < 2.0)
+      rspec-support (= 3.0.0.beta1)
+    rspec-mocks (3.0.0.beta1)
+    rspec-rails (3.0.0.beta1)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-collection_matchers
+      rspec-core (= 3.0.0.beta1)
+      rspec-expectations (= 3.0.0.beta1)
+      rspec-mocks (= 3.0.0.beta1)
+    rspec-support (3.0.0.beta1)
     sass (3.2.13)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -140,6 +158,7 @@ DEPENDENCIES
   ember-appkit-rails!
   jquery-rails
   rails (= 4.1.0.beta1)
+  rspec-rails (~> 3.0.0.beta)
   sass-rails (~> 4.0.0.rc1)
   sdoc
   spring
