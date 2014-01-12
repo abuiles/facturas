@@ -12,12 +12,17 @@ class Api::V1::InvoiceItemsController < ApplicationController
     respond_with @invoice_items
   end
 
+  def show
+    respond_with @invoice_item
+  end
+
+
   # POST /invoice_items
   def create
     @invoice_item = InvoiceItem.new(invoice_item_params)
 
     if @invoice_item.save
-      respond_with @invoice_item, status: :ok, location: api_invoice_item_url(@invoice_item)
+      respond_with @invoice_item, status: :created, location: [:api, :v1, @invoice_item]
     else
       render json: @invoice_item.errors, status: :unprocessable_entity
     end
@@ -47,6 +52,6 @@ class Api::V1::InvoiceItemsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def invoice_item_params
-      params.require(:invoice_item).permit(:amount, :description, :client_id)
+      params.require(:invoice_item).permit(:amount, :description, :client_id, :payment)
     end
 end

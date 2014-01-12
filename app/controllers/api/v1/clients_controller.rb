@@ -20,7 +20,7 @@ class Api::V1::ClientsController < ApplicationController
     @client = Client.new(client_params)
 
     if @client.save
-      respond_with(@client, status: :ok, location: api_client_url(@client))
+      respond_with(@client, status: :created, location: [:api, :v1, @client])
     else
       render json: @client.errors, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class Api::V1::ClientsController < ApplicationController
     if @client.update(client_params)
       head :no_content
     else
-      render json: @client.erros, status: :unprocessable_entity
+      render json: @client.errors, status: :unprocessable_entity
     end
   end
 

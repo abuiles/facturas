@@ -1,0 +1,19 @@
+//= require_self
+//= require_environment_from ./environments
+/*
+ This is useful when using canary versions of Ember to enable
+ feature flags before Ember itself is loaded.
+
+ See the feature flags guide for details:
+
+ http://emberjs.com/guides/configuring-ember/feature-flags/
+*/
+
+window.config = {};
+
+<% config = Rails.application.config.ember %>
+
+config.modulePrefix     = '<%= config.namespaces.app %>';
+config.routerPrefix     = '<%= config.namespaces.config %>';
+config.adapterPrefix    = '<%= config.namespaces.config %>';
+config.serializerPrefix = '<%= config.namespaces.config %>';

@@ -1,2 +1,0 @@
-//= require handlebars
-//= require ember

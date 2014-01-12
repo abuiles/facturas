@@ -9,7 +9,8 @@ Router.map(function() {
 
     this.resource('clients.show', {path: ':client_id'}, function() {
       this.resource('invoice_items', function() {
-        this.route('new', {queryParams: ['abono']});
+        this.route('payment');
+        this.route('new');
         this.route('show', {path: ':invoice_item_id'});
         this.route('edit', {path: ':invoice_item_id/edit'});
       });
