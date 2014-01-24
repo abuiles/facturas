@@ -18,6 +18,7 @@
 // You can require javascript files here. A good place to start is by
 // requiring your application.js.
 //= require application
+//= require jquery.mockjax
 //= require_tree ./helpers
 
 document.write('<div id="ember-testing-container"><div id="ember-testing"></div></div>');
@@ -48,3 +49,11 @@ function strictEqual(actual, expected, message) {
 window.exists = exists;
 window.equal = equal;
 window.strictEqual = strictEqual;
+
+Ember.Test.registerHelper('shouldHaveElementWithCount',
+  function(app, selector, n, context) {
+    var el = findWithAssert(selector, context);
+    var count = el.length;
+    equal(n, count, "found " + count + " times");
+  }
+);
