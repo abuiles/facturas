@@ -1,4 +1,11 @@
 GIT
+  remote: git@github.com:abuiles/teaspoon.git
+  revision: abb4b04ee78ee200fd7d94275ff2b7c481d21d3d
+  specs:
+    teaspoon (0.7.9)
+      railties (>= 3.2.5, < 5)
+
+GIT
   remote: https://github.com/dockyard/ember-appkit-rails.git
   revision: 84b5410e8385738b794692d8a2bc49b995e218ba
   specs:
@@ -160,9 +167,6 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     sqlite3 (1.3.8)
-    teaspoon (0.7.8)
-      phantomjs (>= 1.8.1.1)
-      railties (>= 3.2.5, < 5)
     thor (0.18.1)
     thread_safe (0.1.3)
       atomic
@@ -194,5 +198,5 @@ DEPENDENCIES
   spring
   spring-commands-rspec (~> 1.0.1)
   sqlite3
-  teaspoon
+  teaspoon!
   uglifier (>= 1.3.0)
