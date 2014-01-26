@@ -3,10 +3,10 @@
 <p>{{#link-to 'clients.edit' this}}Edit{{/link-to}} <button {{action destroyRecord}}>Destroy</button></p>
 
 <ul>
-  <li>First Name: {{firstName}}</li>
-  <li>Last Name: {{lastName}}</li>
-  <li>Phone: {{phone}}</li>
-  <li>Email: {{email}}</li>
+  <li class="client-first-name">First Name: {{firstName}}</li>
+  <li class="client-last-name">Last Name: {{lastName}}</li>
+  <li class="client-phone">Phone: {{phone}}</li>
+  <li class="client-email">Email: {{email}}</li>
 </ul>
 
 {{render 'invoiceItems/index' invoiceItems}}

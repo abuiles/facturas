@@ -1,19 +1,24 @@
 <div>
-  <label for="">First Name</label>
-  {{input value=firstName}}
+  <label>First Name
+    {{input value=firstName class="client-first-name"}}
+  </label>
+
 </div>
 <div>
-  <label for="">Last Name</label>
-  {{input value=lastName}}
+  <label>Last Name
+    {{input value=lastName class="client-last-name"}}
+  </label>
 </div>
 <div>
-  <label for="">Phone</label>
-  {{input value=phone}}
+  <label>Phone
+    {{input value=phone class="client-phone"}}
+  </label>
 </div>
 <div>
-  <label for="">Email</label>
-  {{input value=email}}
+  <label>Email
+    {{input value=email class="client-email"}}
+  </label>
 </div>
 
-<button type="submit" {{action save}}>Save</button>
-<button type="submit" {{action cancel}}>Cancel</button>
+<button type="submit" {{action save}} class="create">Save</button>
+<button type="submit" {{action cancel}} class="cancel">Cancel</button>

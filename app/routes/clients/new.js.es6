@@ -4,6 +4,7 @@ export default Ember.Route.extend({
   },
   deactivate: function() {
     var model = this.get('controller.model');
+
     if (model.get('isNew')) {
       model.deleteRecord();
     }
@@ -13,7 +14,6 @@ export default Ember.Route.extend({
       var model = this.get('controller.model');
       var _this = this;
       model.save().then(function(model) {
-        debugger;
         _this.transitionTo('clients.show', model);
       }, function(){alert('reject');});
     },
