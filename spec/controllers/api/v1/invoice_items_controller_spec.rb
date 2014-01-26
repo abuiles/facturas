@@ -7,6 +7,16 @@ describe Api::V1::InvoiceItemsController do
       get :index, format: :json
       expect(assigns(:invoice_items)).to eq([invoice_item])
     end
+
+    describe "with client_id" do
+      it "returns invoice_items scoped to client" do
+        scope = []
+        expect(InvoiceItem).to receive(:with_includes){ scope }
+        expect(scope).to receive(:where).with(client_id: 1){ scope }
+
+        get :index, client_id: 1, format: :json
+      end
+    end
   end
 
   describe "GET show" do

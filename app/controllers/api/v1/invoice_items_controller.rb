@@ -4,7 +4,12 @@ class Api::V1::InvoiceItemsController < ApplicationController
 
   # GET /invoice_items
   def index
-    @invoice_items = InvoiceItem.all
+    @invoice_items = InvoiceItem.with_includes
+
+    if params[:client_id]
+      @invoice_items = @invoice_items.where(client_id: params[:client_id])
+    end
+
     if params[:ids]
       @invoice_items = @invoice_items.where(id: params[:ids])
     end

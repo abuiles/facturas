@@ -1,5 +1,9 @@
 class ClientSerializer < ActiveModel::Serializer
-  attributes :id, :first_name, :last_name, :phone, :email
-  embed :ids
-  has_many :invoice_items
+  attributes :id, :first_name, :last_name, :phone, :email, :links
+
+  def links
+    {
+      invoice_items: api_v1_invoice_items_path(client_id: object.id)
+    }
+  end
 end
