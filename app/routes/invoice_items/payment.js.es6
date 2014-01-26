@@ -7,7 +7,14 @@ export default Ember.Route.extend({
   },
 
   renderTemplate: function(){
-    this.render('invoiceItems/new', {into: 'clients/show', outlet: 'invoiceItems'});
+    this.render(
+      'invoice-items/new',
+      {
+        into: 'clients/show',
+        outlet: 'invoice-items',
+        controller: 'invoice-items/payment'
+      }
+    );
   },
 
   deactivate: function() {
