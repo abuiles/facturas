@@ -103,6 +103,7 @@ GEM
     parser (2.1.4)
       ast (~> 1.1)
       slop (~> 3.4, >= 3.4.5)
+    pg (0.17.1)
     phantomjs (1.9.2.1)
     polyglot (0.3.3)
     rack (1.5.2)
@@ -189,6 +190,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.0)
   jquery-rails
   minitest
+  pg (~> 0.17.1)
   phantomjs (>= 1.8.1.1)
   rails (= 4.1.0.beta1)
   rspec-rails
