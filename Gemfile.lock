@@ -1,11 +1,4 @@
 GIT
-  remote: git@github.com:abuiles/teaspoon.git
-  revision: abb4b04ee78ee200fd7d94275ff2b7c481d21d3d
-  specs:
-    teaspoon (0.7.9)
-      railties (>= 3.2.5, < 5)
-
-GIT
   remote: https://github.com/dockyard/ember-appkit-rails.git
   revision: 84b5410e8385738b794692d8a2bc49b995e218ba
   specs:
@@ -19,6 +12,13 @@ GIT
       jquery-rails
       parser
       rails (~> 4.0)
+
+GIT
+  remote: https://github.com/modeset/teaspoon.git
+  revision: c3bef8566d7b035f71bd8baecd3840a826f3aa66
+  specs:
+    teaspoon (0.7.9)
+      railties (>= 3.2.5, < 5)
 
 GIT
   remote: https://github.com/thoughtbot/shoulda-matchers.git
@@ -98,7 +98,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    minitest (5.2.1)
+    minitest (5.2.2)
     multi_json (1.8.4)
     parser (2.1.4)
       ast (~> 1.1)
