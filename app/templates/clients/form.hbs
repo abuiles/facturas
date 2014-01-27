@@ -1,24 +1,23 @@
-<div>
-  <label>First Name
-    {{input value=firstName class="client-first-name"}}
+<div class="form-group has-success">
+  <label class="control-label">Nombres
+    {{input value=firstName class="client-first-name form-control"}}
   </label>
+</div>
+<div class="form-group has-warning">
+  <label class="control-label">Apellido
+    {{input value=lastName class="client-last-name form-control"}}
+  </label>
+</div>
+<div class="form-group has-error">
+  <label class="control-label">Teléfono
+    {{input value=phone class="client-phone form-control"}}
+  </label>
+</div>
+<div class="form-group has-error">
+  <label class="control-label">Email
+    {{input value=email class="client-email form-control"}}
+  </label>
+</div>
 
-</div>
-<div>
-  <label>Last Name
-    {{input value=lastName class="client-last-name"}}
-  </label>
-</div>
-<div>
-  <label>Phone
-    {{input value=phone class="client-phone"}}
-  </label>
-</div>
-<div>
-  <label>Email
-    {{input value=email class="client-email"}}
-  </label>
-</div>
-
-<button type="submit" {{action save}} class="create">Save</button>
-<button type="submit" {{action cancel}} class="cancel">Cancel</button>
+<button type="submit" {{action save}} class="create btn btn-default">Guardar</button>
+<button type="submit" {{action cancel}} class="cancel btn btn-default">Cancelar</button>
