@@ -9,19 +9,17 @@
     <div class="table-responsive">
       <table class="table table-striped table-bordered table-hover">
         <tr>
-          <th></th>
           <th>Nombres</th>
           <th>Apellido</th>
           <th>Teléfono</th>
-          <th>Email</th>
+          <th>Deuda</th>
         </tr>
         {{#each filteredClients}}
           <tr class="client-row">
-            <td>{{#link-to 'clients.show' this}}Cuenta{{/link-to}}</td>
-            <td>{{firstName}}</td>
+            <td>{{#link-to 'clients.show' this}}{{firstName}}{{/link-to}}</td>
             <td>{{lastName}}</td>
             <td>{{phone}}</td>
-            <td>{{email}}</td>
+            <td>{{balance}}</td>
           </tr>
         {{/each}}
       </table>

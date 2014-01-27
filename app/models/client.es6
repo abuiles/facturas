@@ -1,4 +1,5 @@
 export default DS.Model.extend({
+  balance: DS.attr('number'),
   firstName: DS.attr('string'),
   lastName: DS.attr('string'),
   phone: DS.attr('string'),
