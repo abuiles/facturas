@@ -1,10 +1,14 @@
 source 'https://rubygems.org'
 
+ruby "2.0.0"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0.beta1'
 
 gem "pg", "~> 0.17.1", group: :production
 gem 'sqlite3',         group: :development
+
+gem 'rails_12factor', group: :production
 
 gem 'sass-rails', '~> 4.0.0.rc1'
 
