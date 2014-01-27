@@ -1,19 +1,17 @@
 <h3>Saldo {{total}}</h3>
 
-<p>{{#link-to 'invoice_items.new'}}New Debt{{/link-to}}</p>
-<p>{{#link-to 'invoice_items.payment'}}New Payment{{/link-to}}</p>
+<p>{{#link-to 'invoice_items.new'}}Nueva Deuda{{/link-to}}</p>
+<p>{{#link-to 'invoice_items.payment'}}Nuevo Abono{{/link-to}}</p>
 
 
 <table>
   <tr>
-    <th>id</th>
-    <th>Created At</th>
-    <th>Description</th>
-    <th>Amount</th>
+    <th>Fecha</th>
+    <th>Descripción</th>
+    <th>Valor</th>
   </tr>
   {{#each}}
     <tr>
-      <td>{{#link-to 'invoice_items.show' this}}{{id}}{{/link-to}}</td>
       <td>{{createdAt}}</td>
       <td>{{description}}</td>
       <td>{{amount}}</td>

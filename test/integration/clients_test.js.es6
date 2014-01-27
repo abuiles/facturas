@@ -66,9 +66,9 @@ test("creating a new client display the new client", function(){
     .httpRespond("post", "/api/v1/clients", { client: tyrion }, 201)
 
   andThen(function(){
-    equal(find("ul > li.client-first-name:contains('Tyrion')").length, 1, "Displays the client first name");
-    equal(find("ul > li.client-last-name:contains('Lannister')").length, 1, "Displays the client last name");
-    equal(find("ul > li.client-phone:contains('1234567')").length, 1, "Displays the client phone");
-    equal(find("ul > li.client-email:contains('tyrion@lannisport.com')").length, 1, "Displays the client email");
+    equal(find("dl > dd.client-first-name:contains('Tyrion')").length, 1, "Displays the client first name");
+    equal(find("dl > dd.client-last-name:contains('Lannister')").length, 1, "Displays the client last name");
+    equal(find("dl > dd.client-phone:contains('1234567')").length, 1, "Displays the client phone");
+    equal(find("dl > dd.client-email:contains('tyrion@lannisport.com')").length, 1, "Displays the client email");
   });
 });
