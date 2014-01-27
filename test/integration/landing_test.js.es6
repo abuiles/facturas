@@ -10,8 +10,11 @@ module('Integration - Landing', {
   }
 });
 
-test('landing renders', function(){
+test('has links', function(){
+  expect(2);
+
   visit('/').then(function(){
-    ok(exists('#client-link'), 'find link to client');
+    ok(exists('.clients-link'), 'find link to clients');
+    ok(exists('.new-client-link'), 'find link to new client');
   });
 });

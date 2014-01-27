@@ -36,7 +36,7 @@ response =  {
 test("has a list of clients", function() {
   expect(1);
 
-  visit("/clients").httpRespond("get", "/api/v1/clients", response);
+  visit("/").click(".clients-link").httpRespond("get", "/api/v1/clients", response);
 
   andThen(function(){
     equal(find(".client-row").length, 2, "Has a row for every client");
@@ -56,7 +56,8 @@ test("creating a new client display the new client", function(){
     links: { invoice_items: "/api/v1/invoice_items?client_id=1" }
   }
 
-  visit("/clients/new").
+  visit("/").
+    click(".new-client-link").
     fillIn(".client-first-name", tyrion.first_name).
     fillIn(".client-last-name", tyrion.last_name).
     fillIn(".client-phone", tyrion.phone).
