@@ -25,14 +25,10 @@ Teaspoon.setup do |config|
   config.suite do |suite|
     suite.boot_partial = 'eak_rails'
 
-    suite.normalize_asset_path = lambda { |filename|
-      filename.gsub('.erb', '').gsub(/(\.es6)$/, ".js")
-    }
-
     # You can specify a file matcher and all matching files will be loaded when the suite is run. It's important that these files are serve-able from sprockets.
     #
     # Note: Can also be set to nil.
-    suite.matcher = "test/**/*_test.{js,js.coffee,js.es6,coffee}"
+    suite.matcher = "test/**/*_test.{js,js.coffee,es6,coffee}"
 
     # Each suite can load a different helper, which can in turn require additional files. This file is loaded before
     # your tests are loaded, and can be used as a manifest.

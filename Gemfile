@@ -24,11 +24,10 @@ gem "spring-commands-rspec", "~> 1.0.1", group: :developement
 
 gem 'debugger', group: [:development, :test]
 
-gem 'ember-appkit-rails', git: 'https://github.com/dockyard/ember-appkit-rails.git'
+gem 'ember-appkit-rails', git: 'https://github.com/dockyard/ember-appkit-rails.git', branch: 'teaspoon'
 
 group :development, :test do
   gem "phantomjs", ">= 1.8.1.1" # this is optional if you install phantomjs manually (as of teaspoon 0.7.9)
-  gem "teaspoon", git: "https://github.com/modeset/teaspoon.git"
   gem "rspec-rails"
   gem "factory_girl_rails", "~> 4.0"
   gem "minitest"
