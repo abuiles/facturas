@@ -19,7 +19,7 @@ gem 'jquery-rails'
 
 gem 'sdoc',          group: :doc, require: false
 
-gem 'spring',        group: :development
+gem "spring", "~> 1.0.0", group: :development
 gem "spring-commands-rspec", "~> 1.0.1", group: :developement
 
 gem 'debugger', group: [:development, :test]
