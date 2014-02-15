@@ -9,10 +9,10 @@
     <div class="table-responsive">
       <table class="table table-striped table-bordered table-hover">
         <tr>
-          <th>Nombres</th>
-          <th>Apellido</th>
-          <th>Teléfono</th>
-          <th>Deuda</th>
+          <th>{{link-to "Nombres" (query-params sortBy="firstName")}}</th>
+          <th>{{link-to "Apellido" (query-params sortBy="lastName")}}</th>
+          <th>{{link-to "Teléfono" (query-params sortBy="phone")}}</th>
+          <th>{{link-to "Deuda" (query-params sortBy="balance")}}</th>
         </tr>
         {{#each filteredClients}}
           <tr class="client-row">

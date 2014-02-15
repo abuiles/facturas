@@ -1,4 +1,10 @@
 var ClientsIndex = Ember.ArrayController.extend({
+  queryParams: ['sortBy'],
+  sortBy: 'lastName',
+  sortProperties: function() {
+    return [this.get('sortBy')];
+  }.property('sortBy'),
+  sortAscending: false,
   searchResults: null,
   selected: null,
   searchText: '',
@@ -6,14 +12,13 @@ var ClientsIndex = Ember.ArrayController.extend({
     var searchText = this.get('searchText');
 
     if(searchText.length === 0) {
-      return this.get('model');
+      return this;
     }
 
-    var searchResults = this.get('model').filter(function(client) {
+    var searchResults = this.filter(function(client) {
       return !!client.get('fullName').match(new RegExp(searchText, 'i'));
-    }).sort(function(client1, client2) {
-      return Ember.compare(client1.get('lastName'), client2.get('lastName'));
     });
+
     return searchResults;
   }.property('searchText')
 
