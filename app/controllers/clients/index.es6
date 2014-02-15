@@ -20,7 +20,7 @@ var ClientsIndex = Ember.ArrayController.extend({
     });
 
     return searchResults;
-  }.property('searchText')
+  }.property('searchText', 'this.[]')
 
 });
 
