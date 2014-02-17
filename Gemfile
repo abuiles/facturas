@@ -33,3 +33,5 @@ group :development, :test do
   gem "minitest"
   gem 'shoulda-matchers', git: "https://github.com/thoughtbot/shoulda-matchers.git"
 end
+
+gem "paranoia", "~> 2.0.2"

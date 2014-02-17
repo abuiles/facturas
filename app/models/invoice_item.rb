@@ -10,6 +10,8 @@ class InvoiceItem < ActiveRecord::Base
 
   after_create :update_client_balance
 
+  acts_as_paranoid
+
   private
 
   def update_client_balance

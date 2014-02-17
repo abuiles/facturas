@@ -94,6 +94,8 @@ GEM
     mime-types (1.25.1)
     minitest (5.2.2)
     multi_json (1.8.4)
+    paranoia (2.0.2)
+      activerecord (~> 4.0)
     parser (2.1.4)
       ast (~> 1.1)
       slop (~> 3.4, >= 3.4.5)
@@ -184,6 +186,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.0)
   jquery-rails
   minitest
+  paranoia (~> 2.0.2)
   pg (~> 0.17.1)
   phantomjs (>= 1.8.1.1)
   rails (= 4.1.0.beta1)
