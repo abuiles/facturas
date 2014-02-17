@@ -4,11 +4,13 @@ export default Ember.Route.extend({
   },
   actions: {
     destroyRecord: function() {
-      var model = this.get('controller.model');
-      var _this = this;
-      model.destroyRecord().then(function() {
-        _this.transitionTo('clients.index');
-      });
+      if (confirm('Está seguro de querer eliminar este cliente?')) {
+        var model = this.get('controller.model');
+        var _this = this;
+        model.destroyRecord().then(function() {
+          _this.transitionTo('clients.index');
+        });
+      }
     }
   }
 });
