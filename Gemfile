@@ -35,3 +35,4 @@ group :development, :test do
 end
 
 gem "paranoia", "~> 2.0.2"
+gem "devise", "~> 3.2.3"
