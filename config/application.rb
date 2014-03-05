@@ -32,5 +32,13 @@ module Facturas
         :request_specs => false,
         :routing_specs => false
     end
+
+    bower_dir = Rails.root.join('vendor', 'assets', 'bower_components').to_s
+    config.assets.paths << bower_dir
+    config.sass.load_paths << bower_dir
+
+    config.to_prepare do
+      DeviseController.respond_to :html, :json
+    end
   end
 end

@@ -21,21 +21,33 @@
   <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
       <ul class="nav" id="side-menu">
-        <li>
-          {{#link-to 'index'}}
-            <i class="fa fa-dashboard fa-fw"></i> Informes
-          {{/link-to}}
-        </li>
-        <li>
-          {{#link-to 'clients.index' class="clients-link"}}
-            <i class="fa fa-users-o fa-fw"></i> Clientes
-          {{/link-to}}
-        </li>
-        <li>
-          {{#link-to 'clients.new' class="new-client-link"}}
-            <i class="fa fa-user-o fa-fw"></i> Nuevo Client
-          {{/link-to}}
-        </li>
+        {{#if isSignedIn}}
+          <li>
+            <a href='#' {{action "signOut" on='click'}}>Sign Out</a>
+          </li>
+          <li>
+            {{#link-to 'dashboard'}}
+              <i class="fa fa-dashboard fa-fw"></i> Informes
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'clients.index' class="clients-link"}}
+              <i class="fa fa-users-o fa-fw"></i> Clientes
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'clients.new' class="new-client-link"}}
+              <i class="fa fa-user-o fa-fw"></i> Nuevo Client
+            {{/link-to}}
+          </li>
+        {{else}}
+          <li>
+            {{link-to "Sign In" "session"}}
+          </li>
+          <li>
+            {{link-to "Sign Up" "signUp"}}
+          </li>
+        {{/if}}
       </ul>
       <!-- /#side-menu -->
     </div>
