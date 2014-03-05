@@ -36,3 +36,4 @@ end
 
 gem "paranoia", "~> 2.0.2"
 gem "devise", "~> 3.2.3"
+gem "ember_devise_simple_auth", path: 'lib/engines/ember-devise-simple-auth'
