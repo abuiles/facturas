@@ -1,4 +1,4 @@
-class Api::V1::ClientsController < ApplicationController
+class Api::V1::ClientsController < Api::V1::ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
 
   respond_to :json

@@ -1,4 +1,4 @@
-class Api::V1::InvoiceItemsController < ApplicationController
+class Api::V1::InvoiceItemsController < Api::V1::ApplicationController
   before_action :set_invoice_item, only: [:show, :edit, :update, :destroy]
   respond_to :json
 
