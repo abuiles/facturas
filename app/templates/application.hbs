@@ -23,11 +23,13 @@
       <ul class="nav" id="side-menu">
         {{#if isSignedIn}}
           <li>
-            <a href='#' {{action "signOut" on='click'}}>Sign Out</a>
+            <a href='#' {{action "signOut" on='click'}}>
+              <i class="fa fa-user-o fa-fw"></i> Cerrar Sesión
+            </a>
           </li>
           <li>
             {{#link-to 'dashboard'}}
-              <i class="fa fa-dashboard fa-fw"></i> Informes
+              <i class="fa  fa-fw"></i> Informes
             {{/link-to}}
           </li>
           <li>
