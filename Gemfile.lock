@@ -21,13 +21,6 @@ GIT
     shoulda-matchers (2.5.0)
       activesupport (>= 3.0.0)
 
-PATH
-  remote: lib/engines/ember-devise-simple-auth
-  specs:
-    ember_devise_simple_auth (0.1.0)
-      devise (>= 3.0.0)
-      rails (~> 4.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -88,6 +81,8 @@ GEM
       ember-source
     ember-source (1.5.0.beta.3)
       handlebars-source (~> 1.0)
+    ember_devise_simple_auth (0.4.4)
+      devise (>= 3.0.0)
     erubis (2.7.0)
     es6_module_transpiler-rails (0.3.0)
       execjs
@@ -203,7 +198,7 @@ DEPENDENCIES
   debugger
   devise (~> 3.2.3)
   ember-appkit-rails!
-  ember_devise_simple_auth!
+  ember_devise_simple_auth (~> 0.4.4)
   factory_girl_rails (~> 4.0)
   jquery-rails
   minitest
