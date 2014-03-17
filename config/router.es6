@@ -3,6 +3,11 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('accounts', function() {
+    this.route('new');
+    this.route('show', {path: ':account_id'});
+    this.route('edit', {path: ':account_id/edit'});
+  });
   this.route('signUp', {path: '/sign-up'});
   this.route('dashboard');
   this.resource('clients', function() {

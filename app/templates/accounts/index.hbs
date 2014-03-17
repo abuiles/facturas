@@ -1,0 +1,16 @@
+<h3>Index</h3>
+
+<p>{{link-to 'New account' 'accounts.new'}}</p>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>Name</th>
+  </tr>
+  {{#each}}
+    <tr class='account'>
+      <td>{{link-to id 'accounts.show' this}}</td>
+      <td>{{name}}</td>
+    </tr>
+  {{/each}}
+</table>

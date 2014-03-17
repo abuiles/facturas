@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :accounts, except: [:new, :edit]
       resources :clients
       resources :invoice_items
       resources :dashboard
