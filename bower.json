@@ -1,7 +1,7 @@
 {
   "name": "facturas",
   "dependencies": {
-    "ember-devise-simple-auth": "0.4.1",
+    "ember-devise-simple-auth": "0.5.0",
     "ic-ajax": "~1.0.0",
     "accounting": "0.3.2"
   }

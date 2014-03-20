@@ -6,6 +6,7 @@ define("ember-devise-simple-auth/configuration",
       signInPath: "/sign-in",
       deviseSignInPath: "/users/sign_in",
       deviseSignOutPath: "/users/sign_out",
+      userModelType: "user",
       currentSessionPath: "/sessions/current"
     };
 
@@ -27,12 +28,14 @@ define("ember-devise-simple-auth/configuration",
       initialize: function(container, app) {
         var signInPath = getSetting(app, "deviseSignInPath"),
             signOutPath = getSetting(app, "deviseSignOutPath"),
+            userModelType = getSetting(app, "userModelType"),
             currentSessionPath = getSetting(app, "currentSessionPath");
 
         var auth = Authenticator.create();
 
         auth.set("signInPath", signInPath)
             .set("signOutPath", signOutPath)
+            .set("userModelType", userModelType)
             .set("currentSessionPath", currentSessionPath);
 
         container.register("devise-simple-auth:authenticator", auth, {instantiate: false});
@@ -80,7 +83,7 @@ define("ember-devise-simple-auth/configuration",
     var Authenticator = Ember.Object.extend({
       email: null,
       password: null,
-      currentSession: null,
+      currentUser: null,
       isSignedIn: false,
       isValid: Ember.computed.not("isInvalid"),
       isInvalid: Ember.computed.or("emailInvalid", "passwordInvalid"),
@@ -90,28 +93,36 @@ define("ember-devise-simple-auth/configuration",
       passwordWillChange: function() {
         this.set("passwordInvalid", false);
       }.observesBefore("password"),
-      setupSession: function(session) {
+      setupSession: function(store, session) {
+
+        if(store && typeof store.pushPayload === 'function') {
+          var type = this.get("userModelType");
+          store.pushPayload(type, session);
+          session = store.find(type, session[type].id);
+        }
+
         this.set("isSignedIn", true)
-             .set("currentSession", session);
+             .set("currentUser", session);
         return session;
       },
       teardownSession: function() {
         this.set("isSignedIn", false)
-            .set("currentSession", null);
+            .set("currentUser", null);
       },
+      // store: ember-data store instance; how do we handle non-ember-data?
       // Options: skip: true|false // Doesn't make ajax request for session
-      loadSession: function(storeOrFinder, options) {
-        if(this.get("isSignedIn") && this.get("currentSession")) {
-          return Ember.RSVP.resolve(this.get("currentSession"));
+      loadSession: function(store, options) {
+        if(this.get("isSignedIn") && this.get("currentUser")) {
+          return Ember.RSVP.resolve(this.get("currentUser"));
         } else if(options.skip) {
           return Ember.RSVP.resolve(null);
         } else {
-          return this._loadSession(options);
+          return this._loadSession(store, options);
         }
       },
-      _loadSession: function () {
+      _loadSession: function (store) {
         var result,
-            setup = this.setupSession.bind(this),
+            setup = this.setupSession.bind(this, store),
             teardown = this.teardownSession.bind(this);
 
         return this.ajax("get", this.get("currentSessionPath"))
@@ -209,7 +220,7 @@ define("ember-devise-simple-auth/configuration",
 
     Ember.Controller.reopen({
       isSignedIn: Ember.computed.alias("auth.isSignedIn"),
-      currentSession: Ember.computed.alias("auth.currentSession"),
+      currentUser: Ember.computed.alias("auth.currentUser"),
       invalidCredentials: Ember.computed.alias("auth.isInvalid")
     });
 
