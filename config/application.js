@@ -9,7 +9,7 @@
 //= require_tree ../app
 //= require_tree ./initializers
 //= require ic-ajax/dist/globals/main
-//= require accounting/accounting
+//= require accounting/accounting.js
 
 
 moment.lang('es');
