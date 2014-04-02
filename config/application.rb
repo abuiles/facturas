@@ -15,6 +15,10 @@ Bundler.require(*Rails.groups)
 
 module Facturas
   class Application < Rails::Application
+    bower_dir = Rails.root.join('vendor', 'assets', 'bower_components').to_s
+    config.assets.paths << bower_dir
+    config.sass.load_paths << bower_dir
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -32,10 +36,6 @@ module Facturas
         :request_specs => false,
         :routing_specs => false
     end
-
-    bower_dir = Rails.root.join('vendor', 'assets', 'bower_components').to_s
-    config.assets.paths << bower_dir
-    config.sass.load_paths << bower_dir
 
     config.to_prepare do
       DeviseController.respond_to :html, :json
