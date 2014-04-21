@@ -1,5 +1,13 @@
 class Report < ActiveRecord::Base
   def self.collect
-    create(balance: Client.sum(:balance), date: Date.today)
+    create(balance: balance, debtors: debtors, date: Date.today)
+  end
+
+  def self.balance
+    Client.sum(:balance)
+  end
+
+  def self.debtors
+    Client.where('balance > 0').count
   end
 end

@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140314020419) do
+ActiveRecord::Schema.define(version: 20140421232242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "clients", force: true do |t|
     t.string   "first_name"
@@ -26,6 +33,29 @@ ActiveRecord::Schema.define(version: 20140314020419) do
     t.integer  "balance",    default: 0
     t.datetime "deleted_at"
   end
+
+  create_table "foos", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "invitations", force: true do |t|
+    t.string   "email"
+    t.string   "role"
+    t.integer  "invitable_id"
+    t.string   "invitable_type"
+    t.integer  "user_id"
+    t.datetime "date_sent"
+    t.datetime "date_accepted"
+    t.string   "claim_hash"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "invitations", ["invitable_id"], name: "index_invitations_on_invitable_id", using: :btree
+  add_index "invitations", ["invitable_type"], name: "index_invitations_on_invitable_type", using: :btree
+  add_index "invitations", ["user_id"], name: "index_invitations_on_user_id", using: :btree
 
   create_table "invoice_items", force: true do |t|
     t.integer  "amount"
@@ -40,6 +70,7 @@ ActiveRecord::Schema.define(version: 20140314020419) do
   create_table "reports", force: true do |t|
     t.integer "balance", default: 0
     t.date    "date",                null: false
+    t.integer "debtors", default: 0
   end
 
   add_index "reports", ["date"], name: "index_reports_on_date", unique: true, using: :btree
