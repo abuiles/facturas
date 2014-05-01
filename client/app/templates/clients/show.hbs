@@ -1,0 +1,23 @@
+<p>{{#link-to 'clients.edit' this}}Editar{{/link-to}} <a href="#" {{action destroyRecord}}>Remover</a></p>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Cliente
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Nombre</dt>
+      <dd class="client-first-name">{{firstName}}</dd>
+      <dt>Apellidos</dt>
+      <dd class="client-last-name">{{lastName}}</dd>
+      <dt>Teléfono</dt>
+      <dd class="client-phone">{{phone}}</dd>
+      <dt>Email</dt>
+      <dd class="client-email">{{email}}</dd>
+    </dl>
+  </div>
+  <!-- /.panel-body -->
+</div>
+
+{{outlet invoice-items}}
+{{render 'invoice-items/index' invoiceItems}}

@@ -3,6 +3,11 @@ import loadInitializers from 'ember/load-initializers';
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
+Ember.Controller.reopen({
+  isSignedIn: true,
+  currentUser: {},
+});
+
 var App = Ember.Application.extend({
   modulePrefix: 'client', // TODO: loaded via config
   Resolver: Resolver
