@@ -28,7 +28,8 @@ var app = new EmberApp({
   importWhitelist: {
     'ember': ['default'],
     'ember/resolver': ['default'],
-    'ember/load-initializers': ['default']
+    'ember/load-initializers': ['default'],
+    'ic-ajax': ['request'],
   },
 
   // hack
