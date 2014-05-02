@@ -1,8 +1,8 @@
+import 'ember-devise-simple-auth';
+
 var Router = Ember.Router.extend({
   location: 'history'
 });
-
-require('ember-devise-simple-auth');
 
 Router.map(function() {
   this.route('signUp', {path: '/sign-up'});
