@@ -17,4 +17,11 @@ Things you will learn:
 * Keep up to date with Ember Data and Ember.js.
 
 
+## Running the project
+
+* Start the rails server: `rails s`
+* Start ember-cli: `cd clients && es --proxy-port 3000 --proxy-host 0.0.0.0`
+* Go to: `http://localhost:4200` 
+
+
 Licence MIT - 2014 - Adolfo Builes
