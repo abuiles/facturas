@@ -39,7 +39,11 @@
     "DS",
     "keyEvent",
     "isolatedContainer",
-    "startApp"
+    "startApp",
+    "andThen",
+    "currentUrl",
+    "currentPath",
+    "currentRouteName"
   ],
   "node" : false,
   "browser" : false,

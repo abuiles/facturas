@@ -2,8 +2,7 @@ module.exports = function(environment) {
   var ENV = {
     baseURL: '/',
     FEATURES: {
-      // Here you can enable experimental features on an ember canary build
-      // e.g. 'with-controller': true
+      "query-params-new" : true
     },
 
     APP: {
