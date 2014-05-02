@@ -1,34 +1,20 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var fileMover   = require('broccoli-file-mover');
 
-EmberApp.prototype.populateLegacyFiles = function () {
-
-  this.import('jquery/jquery.js');
-  this.import('handlebars/handlebars.js');
-
-  if (this.env === 'production') {
-    this.import('ember-prod/index.js');
-  } else {
-    this.import('ember/index.js');
+var vendorTree = fileMover('vendor', {
+  files: {
+    'ember/index.js': 'ember/ember.js',
+    'ember-prod/index.js': 'ember/ember.prod.js'
   }
-
-  this.import('ember-cli-shims/app-shims.js', {
-    ember: ['default']
-  });
-
-  this.import('ember-resolver/dist/modules/ember-resolver.js', {
-    'ember/resolver': ['default']
-  });
-
-  this.import('ember-load-initializers/ember-load-initializers.js', {
-    'ember/load-initializers': ['default']
-  });
-};
-
+});
 
 var app = new EmberApp({
   name: require('./package.json').name,
+   trees: {
+    vendor: vendorTree
+   },
 
   // Use this to instruct the `broccoli-es6-concatenator` to allow
   // references to the following modules (this would commonly include
@@ -43,14 +29,14 @@ var app = new EmberApp({
   getEnvJSON: require('./config/environment')
 });
 
-app.import('_ember-devise-simple-auth.js', {
+app.import('vendor/_ember-devise-simple-auth.js', {
   'ember-devise-simple-auth': [
     'default'
   ]
 });
 
-app.import('ember-data/ember-data.js');
-app.import('ic-ajax/dist/named-amd/main.js', {
+app.import('vendor/ember-data/ember-data.js');
+app.import('vendor/ic-ajax/dist/named-amd/main.js', {
   'ic-ajax': [
     'default',
     'defineFixture',

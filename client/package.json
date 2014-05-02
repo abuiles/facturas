@@ -23,5 +23,8 @@
     "broccoli-template": "0.1.1",
     "loom-generators-ember-appkit": "^1.1.1",
     "broccoli-sass": "^0.1.4"
+  },
+  "dependencies": {
+    "broccoli-file-mover": "^0.3.1"
   }
 }
