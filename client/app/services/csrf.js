@@ -6,7 +6,7 @@ export default Em.Object.extend({
     this.set('data', data);
   },
   fetchToken: function() {
-    var setToken = this.setToken.bind(this);
+    var setToken = this.setData.bind(this);
     if (!this.get('data')) {
       return request('api/v1/csrf').then(setToken);
     }
