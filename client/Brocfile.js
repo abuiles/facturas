@@ -33,7 +33,7 @@ var app = new EmberApp({
   // Use this to instruct the `broccoli-es6-concatenator` to allow
   // references to the following modules (this would commonly include
   // any modules exported from any AMD files added to `legacyFilesToAppend`)
-  ignoredModules: [ ],
+  ignoredModules: ['ember-devise-simple-auth'],
 
   // Use this to notify the import validator of any AMD modules
   // that you add to your project.
@@ -41,6 +41,12 @@ var app = new EmberApp({
 
   // hack
   getEnvJSON: require('./config/environment')
+});
+
+app.import('_ember-devise-simple-auth.js', {
+  'ember-devise-simple-auth': [
+    'default'
+  ]
 });
 
 app.import('ember-data/ember-data.js');

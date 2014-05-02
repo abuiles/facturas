@@ -8,6 +8,7 @@
 /node_modules
 /vendor/*
 !/vendor/_loader.js
+!/vendor/_ember-devise-simple-auth.js
 
 # misc
 /.sass-cache
