@@ -9,6 +9,7 @@
 /vendor/*
 !/vendor/_loader.js
 !/vendor/_ember-devise-simple-auth.js
+!/vendor/_amdize.js
 
 # misc
 /.sass-cache

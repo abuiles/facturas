@@ -1,5 +1,5 @@
-var FormatMoney = Ember.Handlebars.makeBoundHelper(function(amount) {
-  return amount;
-});
+import { formatMoney }  from 'accounting';
 
-export default FormatMoney;
+export default Ember.Handlebars.makeBoundHelper(function(value, options) {
+  return formatMoney(value);
+});
