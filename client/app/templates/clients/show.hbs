@@ -1,8 +1,7 @@
-<p>{{#link-to 'clients.edit' this}}Editar{{/link-to}} <a href="#" {{action destroyRecord}}>Remover</a></p>
-
 <div class="panel panel-default">
+  {{confirmable-action text='Remover' confirmAction='destroyRecord'}}
   <div class="panel-heading">
-    Cliente
+    <p>Cliente {{#link-to 'clients.edit' this}}Editar{{/link-to}}</p>
   </div>
   <div class="panel-body">
     <dl class="dl-horizontal">
