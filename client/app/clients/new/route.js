@@ -15,8 +15,6 @@ export default Ember.Route.extend({
       var _this = this;
       model.save().then(function(model) {
         _this.transitionTo('clients.show', model);
-      }, function(){
-        alert('reject');
       });
     },
     cancel: function() {
