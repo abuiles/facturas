@@ -12,21 +12,15 @@ var vendorTree = fileMover('vendor', {
 
 var app = new EmberApp({
   name: require('./package.json').name,
-   trees: {
+  trees: {
     vendor: vendorTree
-   },
+  },
 
-  // Use this to instruct the `broccoli-es6-concatenator` to allow
-  // references to the following modules (this would commonly include
-  // any modules exported from any AMD files added to `legacyFilesToAppend`)
-  ignoredModules: [
-    'ember-devise-simple-auth',
-    'accounting'
-  ],
-
-  // Use this to notify the import validator of any AMD modules
-  // that you add to your project.
-  importWhitelist: { 'accounting': ['default'] },
+  importWhitelist: {
+    'accounting': ['formatMoney'],
+    'moment': ['default'],
+    'ember-devise-simple-auth': ['default']
+  },
 
   // hack
   getEnvJSON: require('./config/environment')
@@ -42,6 +36,12 @@ app.import('vendor/accounting/accounting.js', {
   'accounting': ['formatMoney']
 });
 
+app.import('vendor/momentjs/min/moment-with-langs.min.js', {
+  'moment': [
+    'default'
+  ]
+});
+
 app.import('vendor/ember-data/ember-data.js');
 app.import('vendor/ic-ajax/dist/named-amd/main.js', {
   'ic-ajax': [
@@ -52,7 +52,7 @@ app.import('vendor/ic-ajax/dist/named-amd/main.js', {
     'request',
   ]
 });
-
+app.import('vendor/ember-test-helpers/dist/ember-test-helpers.js');
 app.import('vendor/_amdize.js');
 
 module.exports = app.toTree();
