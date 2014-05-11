@@ -10,8 +10,6 @@
     "QUnit",
     "define",
     "console",
-    "require",
-    "requirejs",
     "equal",
     "notEqual",
     "notStrictEqual",
@@ -41,7 +39,7 @@
     "isolatedContainer",
     "startApp",
     "andThen",
-    "currentUrl",
+    "currentURL",
     "currentPath",
     "currentRouteName"
   ],
