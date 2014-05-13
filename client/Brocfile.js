@@ -15,14 +15,15 @@ var app = new EmberApp({
   trees: {
     vendor: vendorTree
   },
-
   importWhitelist: {
     'accounting': ['formatMoney'],
     'moment': ['default'],
     'ember-devise-simple-auth': ['default']
   },
-
-  // hack
+  minifyCSS: {
+    enabled: true,
+    options: {}
+  },
   getEnvJSON: require('./config/environment')
 });
 
@@ -43,6 +44,11 @@ app.import('vendor/momentjs/min/moment-with-langs.min.js', {
 });
 
 app.import('vendor/ember-data/ember-data.js');
+
+// If the library that you are including contains AMD or ES6 modules that
+// you would like to import into your application please specify an
+// object with the list of modules as keys along with the exports of each
+// module as its value.
 app.import('vendor/ic-ajax/dist/named-amd/main.js', {
   'ic-ajax': [
     'default',
@@ -52,6 +58,7 @@ app.import('vendor/ic-ajax/dist/named-amd/main.js', {
     'request',
   ]
 });
+
 app.import('vendor/ember-test-helpers/dist/ember-test-helpers.js');
 app.import('vendor/_amdize.js');
 
