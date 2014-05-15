@@ -18,7 +18,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "ember-cli": "0.0.27",
+    "ember-cli": "0.0.28",
     "originate": "0.1.5",
     "broccoli-template": "0.1.1",
     "broccoli-file-mover": "^0.3.1",
@@ -26,6 +26,7 @@
     "loom-generators-ember-appkit": "^1.1.1",
     "broccoli-sass": "^0.1.4",
     "express": "^4.1.1",
+    "body-parser": "^1.2.0",
     "glob": "^3.2.9"
   }
 }
