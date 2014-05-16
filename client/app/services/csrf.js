@@ -19,5 +19,20 @@ export default Em.Object.extend({
     if (!this.get('data')) {
       return request('api/v1/csrf').then(setToken);
     }
-  }
+  },
+  updateCSRF: function() {
+    var _this = this;
+    $(document).on("ajaxComplete", function(event, xhr) {
+      var csrf_param = xhr.getResponseHeader('X-CSRF-Param'),
+      csrf_token = xhr.getResponseHeader('X-CSRF-Token');
+      var data = _this.get('data');
+      if (csrf_param) {
+        data.param = csrf_param;
+      }
+      if (csrf_token) {
+        data.token = csrf_token;
+      }
+      _this.set('data', data);
+    });
+  }.on('init')
 });
