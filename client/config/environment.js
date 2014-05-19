@@ -1,6 +1,7 @@
 module.exports = function(environment) {
   var ENV = {
     baseURL: '/',
+    locationType: 'auto',
     FEATURES: {
       "query-params-new" : true
     },
