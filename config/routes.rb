@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   end
 
   get '*foo', :to => 'landing#index'
+
+  root :to => 'landing#index'
 end
