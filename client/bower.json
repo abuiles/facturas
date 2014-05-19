@@ -11,10 +11,10 @@
     "ember-data": "1.0.0-beta.7",
     "ember-resolver": "stefanpenner/ember-jj-abrams-resolver#master",
     "ic-ajax": "~1.x",
-    "loader": "stefanpenner/loader.js#1.0.0",
+    "loader": "stefanpenner/loader.js",
     "ember-cli-shims": "stefanpenner/ember-cli-shims#0.0.1",
     "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.1",
-    "rails-csrf": "abuiles/rails-csrf",
+    "rails-csrf": "0.0.1",
     "ember-test-helpers": "0.0.1",
     "momentjs": "~2.6.0"
   },
