@@ -14,10 +14,11 @@
     "loader": "stefanpenner/loader.js#1.0.0",
     "ember-cli-shims": "stefanpenner/ember-cli-shims#0.0.1",
     "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.1",
+    "rails-csrf": "abuiles/rails-csrf",
     "ember-test-helpers": "0.0.1",
     "momentjs": "~2.6.0"
   },
   "resolutions": {
-    "ember": "e-tag:0f62c1335"
+    "ember": "e-tag:b826efee8"
   }
 }

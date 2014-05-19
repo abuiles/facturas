@@ -59,6 +59,12 @@ app.import('vendor/ic-ajax/dist/named-amd/main.js', {
   ]
 });
 
+app.import('vendor/rails-csrf/dist/named-amd/main.js', {
+  'rails-csrf': [
+    'service'
+  ]
+});
+
 app.import('vendor/ember-test-helpers/dist/ember-test-helpers.js');
 app.import('vendor/_amdize.js');
 
