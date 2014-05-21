@@ -1,6 +1,8 @@
 module.exports = function(environment) {
   var ENV = {
-    csrfURL: 'api/v1/csrf',
+    railsCsrf: {
+      csrfURL: 'api/v1/csrf'
+    },
     baseURL: '/',
     locationType: 'auto',
     FEATURES: {
