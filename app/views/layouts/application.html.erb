@@ -2,12 +2,23 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Client</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Facturas</title>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <%= yield %>
+    <base href="/" />
+
+    <link rel="stylesheet" href="ember-assets/vendor.css">
+    <link rel="stylesheet" href="ember-assets/client.css">
+  <%= csrf_meta_tags %></head>
+  <body><%= yield %>
+    <script>
+      window.ENV = {"railsCsrf":{"csrfURL":"api/v1/csrf"},"baseURL":"/","locationType":"auto","FEATURES":{"query-params-new":true},"APP":{}};
+    </script>
+    <script src="ember-assets/client.js"></script>
+    <script>
+      window.Client = require('client/app')['default'].create(ENV.APP);
+    </script>
   </body>
 </html>
