@@ -14,7 +14,7 @@
     "loader": "stefanpenner/loader.js",
     "ember-cli-shims": "stefanpenner/ember-cli-shims#0.0.1",
     "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.1",
-    "rails-csrf": "0.0.2",
+    "rails-csrf": "0.0.3",
     "ember-test-helpers": "0.0.1",
     "momentjs": "~2.6.0"
   },
