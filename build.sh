@@ -23,6 +23,10 @@ function boldMessage {
 boldMessage 4 "Building Ember app"
 cd client
 ember build --environment production
+
+boldMessage 4 "Running grunt hashres"
+grunt hashres
+
 cd ../
 
 rm -rf public/ember-assets
