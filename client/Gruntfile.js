@@ -11,12 +11,16 @@ module.exports = function(grunt) {
         options: {
         },
         src: [
-          'dist/assets/vendor.css',
-          'dist/assets/client.css',
-          'dist/assets/client.js'
+          'dist/assets/*.js',
+          'dist/assets/*.css'
         ],
-        // File that refers to above files and needs to be updated with the hashed name
         dest: 'dist/index.html'
+      },
+      images: {
+        src: [
+          'dist/assets/images/*'
+        ],
+        dest: ['dist/assets/*.css', 'dist/assets/*.js']
       }
     }});
   grunt.loadNpmTasks('grunt-hashres');
