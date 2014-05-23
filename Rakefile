@@ -7,7 +7,7 @@ Rails.application.load_tasks
 
 task :deploy, :env, :remote do |t, args|
   sh "git checkout #{args[:env]}"
-  sh 'git merge master -m "Merging for deployment"'
+  sh 'git reset --hard master'
   sh './build.sh'
 
   sh 'git add -A'
