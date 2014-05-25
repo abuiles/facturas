@@ -32,7 +32,6 @@
   "dependencies": {
     "broccoli-fingerprint": "0.0.3",
     "grunt": "^0.4.5",
-    "grunt-hashres": "^0.4.1",
     "http-proxy": "^1.1.4"
   }
 }

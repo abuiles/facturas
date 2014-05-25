@@ -68,4 +68,16 @@ app.import('vendor/rails-csrf/dist/named-amd/main.js', {
 app.import('vendor/ember-test-helpers/dist/ember-test-helpers.js');
 app.import('vendor/_amdize.js');
 
-module.exports = app.toTree();
+
+var tree = app.toTree();
+
+if (app.env === 'production') {
+  var assetRev = require('broccoli-asset-rev');
+
+  tree = assetRev(tree, {
+    fingerprintExtensions: ['js', 'css', 'png', 'jpg', 'gif'],
+    replaceExtensions: ['html', 'js', 'css']
+  });
+}
+
+module.exports = tree;
