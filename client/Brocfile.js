@@ -43,7 +43,10 @@ app.import('vendor/momentjs/min/moment-with-langs.min.js', {
   ]
 });
 
-app.import('vendor/ember-data/ember-data.js');
+app.import({
+  development: 'vendor/ember-data/ember-data.js',
+  production:  'vendor/ember-data/ember-data.prod.js'
+});
 
 // If the library that you are including contains AMD or ES6 modules that
 // you would like to import into your application please specify an

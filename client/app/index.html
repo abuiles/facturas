@@ -14,11 +14,11 @@
   </head>
   <body>
     <script>
-      window.ENV = {{ENV}};
+      window.ClientENV = {{ENV}};
     </script>
     <script src="assets/client.js"></script>
     <script>
-      window.Client = require('client/app')['default'].create(ENV.APP);
+      window.Client = require('client/app')['default'].create(ClientENV.APP);
     </script>
   </body>
 </html>

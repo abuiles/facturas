@@ -1,7 +1,7 @@
 import 'ember-devise-simple-auth';
 
 var Router = Ember.Router.extend({
-  location: ENV.locationType
+  location: ClientENV.locationType
 });
 
 Router.map(function() {
