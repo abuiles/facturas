@@ -18,20 +18,14 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "ember-cli": "0.0.29",
+    "ember-cli": "0.0.34",
     "originate": "0.1.5",
     "broccoli-template": "0.1.1",
     "broccoli-file-mover": "^0.3.1",
     "broccoli-ember-hbs-template-compiler": "^1.5.0",
-    "loom-generators-ember-appkit": "^1.1.1",
     "broccoli-sass": "^0.1.4",
     "express": "^4.1.1",
     "body-parser": "^1.2.0",
     "glob": "^3.2.9"
-  },
-  "dependencies": {
-    "broccoli-fingerprint": "0.0.3",
-    "grunt": "^0.4.5",
-    "http-proxy": "^1.1.4"
   }
 }

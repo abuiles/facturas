@@ -15,7 +15,9 @@
   <body>
     <script>
       window.ClientENV = {{ENV}};
+      window.EmberENV = window.ClientENV.EmberENV;
     </script>
+    <script src="assets/vendor.js"></script>
     <script src="assets/client.js"></script>
     <script>
       window.Client = require('client/app')['default'].create(ClientENV.APP);

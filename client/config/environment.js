@@ -1,3 +1,5 @@
+/* jshint node: true */
+
 module.exports = function(environment) {
   var ENV = {
     railsCsrf: {
@@ -5,8 +7,10 @@ module.exports = function(environment) {
     },
     baseURL: '/',
     locationType: 'auto',
-    FEATURES: {
-      "query-params-new" : true
+    EmberENV: {
+      FEATURES: {
+        "query-params-new" : true
+      }
     },
 
     APP: {
@@ -16,11 +20,14 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    // LOG_MODULE_RESOLVER is needed for pre-1.6.0
+    ENV.LOG_MODULE_RESOLVER = true;
+
     ENV.APP.LOG_RESOLVER = true;
     ENV.APP.LOG_ACTIVE_GENERATION = true;
     ENV.APP.LOG_MODULE_RESOLVER = true;
-    ENV.APP.LOG_TRANSITIONS = true;
-    ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    // ENV.APP.LOG_TRANSITIONS = true;
+    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
