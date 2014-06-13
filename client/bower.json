@@ -11,7 +11,7 @@
     "ember-data": "1.0.0-beta.8",
     "ember-resolver": "~0.1.1",
     "ic-ajax": "~1.x",
-    "loader": "stefanpenner/loader.js#1.0.0",
+    "loader": "stefanpenner/loader.js#refactoring",
     "ember-cli-shims": "stefanpenner/ember-cli-shims#0.0.2",
     "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.2",
     "ember-qunit-notifications": "^0.0.1",
@@ -21,6 +21,6 @@
     "momentjs": "~2.6.0"
   },
   "resolutions": {
-    "ember": "e-tag:fdbf83df7"
+    "ember": "e-tag:b56a616d8"
   }
 }

@@ -50,35 +50,46 @@ app.import({
 });
 
 app.import('vendor/_ember-devise-simple-auth.js', {
-  'ember-devise-simple-auth': [
-    'default'
-  ]
+  availableModules: {
+    'ember-devise-simple-auth': [
+      'default'
+    ]
+  }
 });
 
 app.import('vendor/accounting/accounting.js', {
-  'accounting': ['formatMoney']
+  availableModules: {
+    'accounting': ['formatMoney']
+  },
+  deanonymize: true
 });
 
-app.import('vendor/momentjs/min/moment-with-langs.min.js', {
-  'moment': [
-    'default'
-  ]
+app.import('vendor/momentjs/moment.js', {
+  availableModules: {
+    'moment': [
+      'default'
+    ]
+  }
 });
 
 app.import('vendor/ic-ajax/dist/named-amd/main.js', {
-  'ic-ajax': [
-    'default',
-    'defineFixture',
-    'lookupFixture',
-    'raw',
-    'request',
-  ]
+  availableModules: {
+    'ic-ajax': [
+      'default',
+      'defineFixture',
+      'lookupFixture',
+      'raw',
+      'request',
+    ]
+  }
 });
 
 app.import('vendor/rails-csrf/dist/named-amd/main.js', {
-  'rails-csrf': [
-    'service'
-  ]
+  availableModules: {
+    'rails-csrf': [
+      'service'
+    ]
+  }
 });
 
 app.import('vendor/ember-test-helpers/dist/ember-test-helpers.js');

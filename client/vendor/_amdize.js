@@ -1,19 +1,19 @@
-(function() {
-/* global define accounting */
-  define('accounting', [], function() {
-    'use strict';
+// (function() {
+// /* global define accounting */
+//   define('accounting', [], function() {
+//     'use strict';
 
-    return accounting;
-  });
+//     return accounting;
+//   });
 
-/* global define moment */
-  define('moment', [], function() {
-    'use strict';
+// /* global define moment */
+//   define('moment', [], function() {
+//     'use strict';
 
-    moment.lang('es');
+//     moment.lang('es');
 
-    return {
-      'default': moment
-    };
-  });
-})();
+//     return {
+//       'default': moment
+//     };
+//   });
+// })();
