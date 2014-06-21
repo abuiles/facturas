@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
+    environment: environment,
     railsCsrf: {
       csrfURL: 'api/v1/csrf'
     },
