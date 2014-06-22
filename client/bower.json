@@ -16,11 +16,11 @@
     "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.2",
     "ember-qunit-notifications": "^0.0.1",
     "ember-cli-test-loader": "rjackson/ember-cli-test-loader#0.0.2",
-    "rails-csrf": "0.0.3",
+    "rails-csrf": "0.0.4",
     "ember-test-helpers": "0.0.1",
     "momentjs": "~2.6.0"
   },
   "resolutions": {
-    "ember": "e-tag:fdbf83df7"
+    "ember": "e-tag:b826efee8"
   }
 }
