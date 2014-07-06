@@ -27,29 +27,40 @@ var app = new EmberApp({
   getEnvJSON: require('./config/environment')
 });
 
-app.import('vendor/_ember-devise-simple-auth.js', {
-  'ember-devise-simple-auth': [
-    'default'
-  ]
+app.import('vendor/custom-plugins/_ember-devise-simple-auth.js', {
+  exports: {
+    'ember-devise-simple-auth': [
+      'default'
+    ]
+  }
 });
 
 app.import('vendor/accounting/accounting.js', {
-  'accounting': ['formatMoney']
+  exports: {
+    'accounting': ['formatMoney']
+  },
+  deanonymize: true,
+  name: 'accounting'
 });
 
 app.import('vendor/momentjs/min/moment-with-langs.min.js', {
-  'moment': [
-    'default'
-  ]
+  exports: {
+    'moment': [
+      'default'
+    ]
+  }
 });
 
 app.import('vendor/rails-csrf/dist/named-amd/main.js', {
-  'rails-csrf': [
-    'service'
-  ]
+  exports: {
+    'rails-csrf': [
+      'service',
+      'setCsrfUrl'
+    ]
+  }
 });
 
 app.import('vendor/ember-test-helpers/dist/ember-test-helpers.js');
-app.import('vendor/_amdize.js');
+app.import('vendor/custom-plugins/_amdize.js');
 
 module.exports = app.toTree();
