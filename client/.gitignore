@@ -16,3 +16,4 @@
 npm-debug.log
 testem.log
 !/vendor/custom-plugins
+.env
