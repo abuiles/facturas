@@ -2,7 +2,10 @@
   "predef": {
     "document": true,
     "window": true,
-    "ClientENV": true
+    "ClientENV": true,
+    "Ember": true,
+    "QUnit": true,
+    "DS": true
   },
   "browser" : true,
   "boss" : true,

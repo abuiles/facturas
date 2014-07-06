@@ -1,31 +1,8 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-var fileMover   = require('broccoli-file-mover');
 
-var vendorTree = fileMover('vendor', {
-  files: {
-    'ember/index.js': 'ember/ember.js',
-    'ember-prod/index.js': 'ember/ember.prod.js'
-  }
-});
-
-var app = new EmberApp({
-  name: require('./package.json').name,
-  trees: {
-    vendor: vendorTree
-  },
-  importWhitelist: {
-    'accounting': ['formatMoney'],
-    'moment': ['default'],
-    'ember-devise-simple-auth': ['default']
-  },
-  minifyCSS: {
-    enabled: true,
-    options: {}
-  },
-  getEnvJSON: require('./config/environment')
-});
+var app = new EmberApp({});
 
 app.import('vendor/custom-plugins/_ember-devise-simple-auth.js', {
   exports: {
