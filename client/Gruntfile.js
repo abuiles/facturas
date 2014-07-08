@@ -1,6 +1,4 @@
 module.exports = function(grunt) {
-  var target, timestamp;
-  timestamp = Date.now().toString();
   grunt.initConfig({
     env: grunt.file.readJSON('.env'),
     s3: {
