@@ -36,3 +36,4 @@ gem "paranoia", "~> 2.0.2"
 gem "devise", "~> 3.2.3"
 gem "ember_devise_simple_auth", "~> 0.4.4"
 gem 'active_model_serializers', '~> 0.8.1'
+gem 'redis', '~> 3.1.0'
