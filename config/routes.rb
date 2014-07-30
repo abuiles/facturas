@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get :csrf, to: 'csrf#index'
       resources :clients
       resources :invoice_items
-      resources :dashboard
+      resources :reports
     end
   end
 
