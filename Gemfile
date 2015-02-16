@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 ruby "2.0.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0.beta1'
+gem 'rails', '4.2.0'
+gem 'responders', '~> 2.0'
 
 gem "pg", "~> 0.17.1", group: :production
 gem 'sqlite3',         group: :development
@@ -33,7 +34,7 @@ group :development, :test do
 end
 
 gem "paranoia", "~> 2.0.2"
-gem "devise", "~> 3.2.3"
-gem "ember_devise_simple_auth", "~> 0.4.4"
+gem "devise", "~> 3.4.1"
 gem 'active_model_serializers', '~> 0.8.1'
 gem 'redis', '~> 3.1.0'
+gem "devise_token_auth", "~> 0.1.31"
